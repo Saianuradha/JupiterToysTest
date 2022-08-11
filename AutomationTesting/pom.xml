@@ -4,6 +4,11 @@
   <artifactId>AutomationTesting</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  <properties>
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+  
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 		<dependency>
@@ -11,6 +16,12 @@
 			<artifactId>testng</artifactId>
 			<version>7.6.1</version>
 		</dependency>
+
+		<dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+        </dependency>
 
 
 
