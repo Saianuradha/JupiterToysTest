@@ -47,13 +47,19 @@ public class VerifyCartItems extends BaseClass{
 		shop.addItem(item0);
 		cart.viewCart();
 		
-		String funnyCowText = driver.findElement(
+		String item0Text = driver.findElement(
 				By.xpath("//table[@class='table table-striped cart-items']//tbody/tr[1]/td[1]")).getText(); 
-		String funncyCowQuantityInCart = driver.findElement(By.xpath("//table[@class='table table-striped cart-items']//tbody/tr[1]/td[3]/input")).getAttribute("value");
-		Assert.assertEquals(funncyCowQuantityInCart, "2","FunnyCow Quantity is matched");
-		Assert.assertEquals(funnyCowText, "Funny Cow","Funny Cow Text is matched");
+		String item0QuantityInCart = driver.findElement(By.xpath("//table[@class='table table-striped cart-items']//tbody/tr[1]/td[3]/input")).getAttribute("value");
+		Assert.assertEquals(item0QuantityInCart, "2","FunnyCow Quantity is matched");
+		Assert.assertEquals(item0Text, shoppingItems.get(0),"Funny Cow Text is matched");
 		
-		//TODO add for fluffy bunny
+		
+		String item1Text = driver.findElement(
+				By.xpath("//table[@class='table table-striped cart-items']//tbody/tr[2]/td[1]")).getText(); 
+		String item1QuantityInCart = driver.findElement(By.xpath("//table[@class='table table-striped cart-items']//tbody/tr[2]/td[3]/input")).getAttribute("value");
+		Assert.assertEquals(item1QuantityInCart, "1","Fluffy Bunny Quantity is matched");
+		Assert.assertEquals(item1Text, shoppingItems.get(1),"Fluffy Bunny Text is matched");
+		
 	
 	}
 
