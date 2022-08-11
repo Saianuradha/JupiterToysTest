@@ -19,9 +19,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 
-public class baseClass {
+public class BaseClass {
 	
-	public static WebDriver driver;
+	private WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
@@ -31,10 +31,15 @@ public class baseClass {
 
 	public static String browser;
 	
+	public WebDriver getDriver() {
+		return driver;
+	}
+	
+	
 	@BeforeSuite
 	public void setup() {
 		
-		if(browser==null) {
+if(browser==null) {
 			
 			
 			try {
@@ -81,13 +86,15 @@ public class baseClass {
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")),
 				TimeUnit.SECONDS);
 	}
+@AfterSuite
 
-	@AfterSuite
-	public void teardown() {
-		
-		if(driver!=null) {
-			driver.quit();
-			
-		}
-	}
+	void teardown(){
+	if(driver!=null)
+	driver.quit();
+	
+}
+
+
+
+
 }

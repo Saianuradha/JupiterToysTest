@@ -14,11 +14,7 @@ public class TestClass {
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\properties\\Config.properties");
 		config.load(fis);
 		fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\resources\\properties\\OR.properties");
-		OR.load(fis);
-		
-		
-		
-		
+		OR.load(fis);		
 	}
 
 }
