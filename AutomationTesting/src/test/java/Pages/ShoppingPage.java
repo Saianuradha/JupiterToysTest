@@ -25,9 +25,5 @@ public class ShoppingPage{
 		}
 		elementActions.click(value);
 	}
-	
-//	public void addFluffyBunny() {
-//		elementActions.click(btnbuy_fluffyBunny);
-//	}
 
 }

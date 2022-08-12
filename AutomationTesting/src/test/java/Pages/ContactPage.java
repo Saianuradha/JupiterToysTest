@@ -1,12 +1,10 @@
 package Pages;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.asserts.SoftAssert;
-
 import Testbase.BaseClass;
 import Utilities.ElementsActions;
 
@@ -57,14 +55,6 @@ public String submitBtn = "//*[text()='Submit']";
 	
 	}
 
-	public void enterFieldInfo(String forename, String email, String message) {
-		
-		driver.findElement(By.id(OR.getProperty("input_forename"))).sendKeys(forename);
-		driver.findElement(By.id(OR.getProperty("input_email"))).sendKeys(email);
-		driver.findElement(By.id(OR.getProperty("input_message"))).sendKeys(message);
-	
-	}
-
 	public void enterTextFieldInfoByID(String key, String value) {
 		
 		driver.findElement(By.id(OR.getProperty(key))).sendKeys(value);
@@ -73,22 +63,23 @@ public String submitBtn = "//*[text()='Submit']";
 
 	
 	public void clickOnSubmit() {
-		driver.findElement(By.xpath(OR.getProperty("submitbtn"))).click();
+		driver.findElement(By.xpath(submitBtn)).click();
 	}
 
 
-	public void validsuceess() {
+	public void validsuccess() {
 		
-		String message = driver.findElement(By.xpath(OR.getProperty("msg_success"))).getText();
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@ui-if='contactValidSubmit']/div")));
 		
-		System.out.print(message);
-		Assert.assertEquals(message, "Thanks Anu, we appreciate your feedback.");
-		
+			String message = driver.findElement(By.xpath("//*[@ui-if='contactValidSubmit']/div")).getText();
+			
+			Assert.assertEquals(message, "Thanks Anu, we appreciate your feedback.");
 		
 	}
 
-	public void clikonBack() {
-		driver.findElement(By.xpath(OR.getProperty("backbtn"))).click();
+	public void clickonBack() {
+		driver.findElement(By.xpath("//*[contains(text(),'Back')]")).click();
 	}
 	
 	
