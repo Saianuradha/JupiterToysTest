@@ -1,12 +1,9 @@
 package TestCases;
 
-import static org.testng.Assert.assertEquals;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,15 +12,10 @@ import Pages.CartPage;
 import Pages.ShoppingPage;
 import Testbase.BaseClass;
 
-public class VerifyCartItems extends BaseClass{
+public class VerifyCartItemsTest extends BaseClass{
 	
 	public ShoppingPage shop;
 	public CartPage cart;
-	
-//	public VerifyCartItems() {
-////	 shop = new ShoppingPage(driver);
-////	 cart = new CartPage(driver);
-//	}
 	
 	@BeforeTest
 	public void before() {
