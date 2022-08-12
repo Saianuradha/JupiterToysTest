@@ -5,7 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -17,14 +21,22 @@ public class VerifyCartItemsTest extends BaseClass{
 	
 	public ShoppingPage shop;
 	public CartPage cart;
+    public WebDriver driver;
 	
 	@BeforeTest
 	public void before() {
+		this.driver = BaseClass.driver;
 		shop = new ShoppingPage(driver);
 		cart = new CartPage(driver);
+		launchUrl();
 	}
 	
-	@Test(enabled = true, priority = 3)
+	@AfterMethod
+	public void after() {
+		launchHomePage();
+	}
+	
+	@Test(description = "Test Case 3", enabled = true, priority = 3)
 	public void addItemsAndVerify() {
 		
 		driver.findElement(By.xpath("//*[@id=\"nav-shop\"]/a")).click();
@@ -54,11 +66,9 @@ public class VerifyCartItemsTest extends BaseClass{
 		Assert.assertEquals(item1QuantityInCart, "1","Fluffy Bunny Quantity is matched");
 		Assert.assertEquals(item1Text, shoppingItems.get(1),"Fluffy Bunny Text is matched");
 		
-	
-		launchHomePage();
 	}
 	
-	@Test(enabled = true, priority = 4)
+	@Test(description = "Test Case 4", enabled = true, priority = 4)
 	public void addItemsAndVerifyCartPrice() {
 		
 		driver.findElement(By.xpath("//*[@id=\"nav-shop\"]/a")).click();
@@ -117,8 +127,9 @@ public class VerifyCartItemsTest extends BaseClass{
 		
 		
 		Assert.assertEquals(calcTotal(item0SubTotal, item1SubTotal, item2SubTotal), total);
-		launchHomePage();
 	}
+	
+	
 	
 	public String calcSubTotal(String price, String quantity) {
 	

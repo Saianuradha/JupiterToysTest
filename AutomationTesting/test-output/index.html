@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-AutomationTesting" class="navigator-link">
-              <span class="suite-name border-failed">AutomationTesting</span>
+              <span class="suite-name border-passed">AutomationTesting</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,26 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">8 methods, 2 failed,   6 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-AutomationTesting" class="hide-methods failed suite-AutomationTesting"> (hide)</a> <!-- hide-methods failed suite-AutomationTesting -->
-                      <a href="#" panel-name="suite-AutomationTesting" class="show-methods failed suite-AutomationTesting"> (show)</a> <!-- show-methods failed suite-AutomationTesting -->
-                    </span>
-                    <div class="method-list-content failed suite-AutomationTesting">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-AutomationTesting" title="TestCases.VerifyCartItemsTest" class="method navigator-link" hash-for-method="addItemsAndVerify">addItemsAndVerify</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-AutomationTesting" title="TestCases.VerifyCartItemsTest" class="method navigator-link" hash-for-method="addItemsAndVerifyCartPrice">addItemsAndVerifyCartPrice</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-AutomationTesting -->
+                    <span class="method-stats">8 methods,   8 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -121,6 +102,16 @@
                       <a href="#" panel-name="suite-AutomationTesting" class="show-methods passed suite-AutomationTesting"> (show)</a> <!-- show-methods passed suite-AutomationTesting -->
                     </span>
                     <div class="method-list-content passed suite-AutomationTesting">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AutomationTesting" title="TestCases.VerifyCartItemsTest" class="method navigator-link" hash-for-method="addItemsAndVerify">addItemsAndVerify</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AutomationTesting" title="TestCases.VerifyCartItemsTest" class="method navigator-link" hash-for-method="addItemsAndVerifyCartPrice">addItemsAndVerifyCartPrice</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-AutomationTesting" title="TestCases.ContactPageTest" class="method navigator-link" hash-for-method="validateContactPage">validateContactPage</a> <!-- method navigator-link -->
@@ -163,9 +154,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-AutomationTesting" class="panel AutomationTesting">
-          <div class="suite-AutomationTesting-class-failed">
+          <div class="suite-AutomationTesting-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">TestCases.VerifyCartItemsTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -174,11 +165,8 @@
                   <a name="addItemsAndVerify">
                   </a> <!-- addItemsAndVerify -->
                   <span class="method-name">addItemsAndVerify</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;this.driver&quot; is null
-	at TestCases.VerifyCartItemsTest.addItemsAndVerify(VerifyCartItemsTest.java:30)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
+                  <em>
+(Test Case 3)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -186,15 +174,12 @@
                   <a name="addItemsAndVerifyCartPrice">
                   </a> <!-- addItemsAndVerifyCartPrice -->
                   <span class="method-name">addItemsAndVerifyCartPrice</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)&quot; because &quot;this.driver&quot; is null
-	at TestCases.VerifyCartItemsTest.addItemsAndVerifyCartPrice(VerifyCartItemsTest.java:64)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
-</div> <!-- stack-trace -->
+                  <em>
+(Test Case 4)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-AutomationTesting-class-failed -->
+          </div> <!-- suite-AutomationTesting-class-passed -->
           <div class="suite-AutomationTesting-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -206,6 +191,8 @@
                   <a name="validateContactPage">
                   </a> <!-- validateContactPage -->
                   <span class="method-name">validateContactPage</span>
+                  <em>
+(Test Case 1)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -213,6 +200,8 @@
                   <a name="validateContactPageValidSuccess">
                   </a> <!-- validateContactPageValidSuccess -->
                   <span class="method-name">validateContactPageValidSuccess</span>
+                  <em>
+(Test Case 2)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -220,6 +209,8 @@
                   <a name="validateContactPageValidSuccess">
                   </a> <!-- validateContactPageValidSuccess -->
                   <span class="method-name">validateContactPageValidSuccess</span>
+                  <em>
+(Test Case 2)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -227,6 +218,8 @@
                   <a name="validateContactPageValidSuccess">
                   </a> <!-- validateContactPageValidSuccess -->
                   <span class="method-name">validateContactPageValidSuccess</span>
+                  <em>
+(Test Case 2)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -234,6 +227,8 @@
                   <a name="validateContactPageValidSuccess">
                   </a> <!-- validateContactPageValidSuccess -->
                   <span class="method-name">validateContactPageValidSuccess</span>
+                  <em>
+(Test Case 2)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -241,6 +236,8 @@
                   <a name="validateContactPageValidSuccess">
                   </a> <!-- validateContactPageValidSuccess -->
                   <span class="method-name">validateContactPageValidSuccess</span>
+                  <em>
+(Test Case 2)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -257,8 +254,8 @@
 &lt;suite name=&quot;AutomationTesting&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestCases.ContactPageTest&quot;/&gt;
       &lt;class name=&quot;TestCases.VerifyCartItemsTest&quot;/&gt;
+      &lt;class name=&quot;TestCases.ContactPageTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- AutomationTesting --&gt;
@@ -302,40 +299,40 @@ data.addRows(8);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'validateContactPageValidSuccess')
 data.setCell(0, 2, 'TestCases.ContactPageTest')
-data.setCell(0, 3, 14536);
+data.setCell(0, 3, 18849);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'validateContactPageValidSuccess')
 data.setCell(1, 2, 'TestCases.ContactPageTest')
-data.setCell(1, 3, 11125);
+data.setCell(1, 3, 12300);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'validateContactPageValidSuccess')
 data.setCell(2, 2, 'TestCases.ContactPageTest')
-data.setCell(2, 3, 9260);
+data.setCell(2, 3, 5598);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'validateContactPageValidSuccess')
-data.setCell(3, 2, 'TestCases.ContactPageTest')
-data.setCell(3, 3, 6990);
+data.setCell(3, 1, 'addItemsAndVerify')
+data.setCell(3, 2, 'TestCases.VerifyCartItemsTest')
+data.setCell(3, 3, 5544);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'validateContactPageValidSuccess')
 data.setCell(4, 2, 'TestCases.ContactPageTest')
-data.setCell(4, 3, 5026);
+data.setCell(4, 3, 5112);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'validateContactPage')
+data.setCell(5, 1, 'validateContactPageValidSuccess')
 data.setCell(5, 2, 'TestCases.ContactPageTest')
-data.setCell(5, 3, 1027);
+data.setCell(5, 3, 5046);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'addItemsAndVerify')
+data.setCell(6, 1, 'addItemsAndVerifyCartPrice')
 data.setCell(6, 2, 'TestCases.VerifyCartItemsTest')
-data.setCell(6, 3, 1);
+data.setCell(6, 3, 2358);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'addItemsAndVerifyCartPrice')
-data.setCell(7, 2, 'TestCases.VerifyCartItemsTest')
-data.setCell(7, 3, 1);
+data.setCell(7, 1, 'validateContactPage')
+data.setCell(7, 2, 'TestCases.ContactPageTest')
+data.setCell(7, 3, 1071);
 window.suiteTableData['AutomationTesting']= { tableData: data, tableDiv: 'times-div-AutomationTesting'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 47 seconds</span>
+              <span class="suite-total-time">Total running time: 55 seconds</span>
               <div id="times-div-AutomationTesting">
               </div> <!-- times-div-AutomationTesting -->
             </div> <!-- times-div -->
@@ -354,7 +351,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">TestCases.VerifyCartItemsTest</span>
+              <span class="ignored-class-name">TestCases.ContactPageTest</span>
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">setup</span>
                 <br/>
@@ -368,64 +365,92 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.ContactPageTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestCases.VerifyCartItemsTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">TestCases.ContactPageTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">before</span>
-                <span class="method-start">4824 ms</span>
+                <span class="method-start">1759 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestCases.VerifyCartItemsTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">before</span>
-                <span class="method-start">4826 ms</span>
+                <span class="method-start">4580 ms</span>
               </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">addItemsAndVerify</span>
+                <span class="method-start">4752 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">10312 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">addItemsAndVerifyCartPrice</span>
+                <span class="method-start">10429 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">12787 ms</span>
+              </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">TestCases.ContactPageTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">validateContactPage</span>
-                <span class="method-start">4874 ms</span>
+                <span class="method-start">12888 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">13959 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">validateContactPageValidSuccess</span>
-                <span class="method-start">5908 ms</span>
+                <span class="method-start">14052 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">19651 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">validateContactPageValidSuccess</span>
-                <span class="method-start">17036 ms</span>
+                <span class="method-start">19749 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">32051 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">validateContactPageValidSuccess</span>
-                <span class="method-start">31573 ms</span>
+                <span class="method-start">32149 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">37195 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">validateContactPageValidSuccess</span>
-                <span class="method-start">36602 ms</span>
+                <span class="method-start">37270 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">56121 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
                 <span class="method-name">validateContactPageValidSuccess</span>
-                <span class="method-start">43597 ms</span>
+                <span class="method-start">56212 ms</span>
               </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.VerifyCartItemsTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">addItemsAndVerify</span>
-                <span class="method-start">52865 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">addItemsAndVerifyCartPrice</span>
-                <span class="method-start">52869 ms</span>
-              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">after</span>
+                <span class="method-start">61325 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

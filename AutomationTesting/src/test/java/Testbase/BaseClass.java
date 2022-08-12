@@ -19,7 +19,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-	public WebDriver driver;
+	public static WebDriver driver;
 	public static Properties config = new Properties();
 	public static Properties OR = new Properties();
 	public static FileInputStream fis;
@@ -27,8 +27,17 @@ public class BaseClass {
 
 	public static String browser;
 
-	public WebDriver getDriver() {
-		return driver;
+	public void getDriver() {
+		if(driver == null) {
+			if (config.getProperty("browser").equals("firefox")) {
+				driver = new FirefoxDriver();
+			} else if (config.getProperty("browser").equals("chrome")) {
+				WebDriverManager.chromedriver().setup();
+				driver = new ChromeDriver();
+			}
+			//launchUrl();
+		}
+//		return driver;
 	}
 
 	@BeforeSuite
@@ -48,15 +57,16 @@ public class BaseClass {
 				e.printStackTrace();
 			}
 			
-			if (config.getProperty("browser").equals("firefox")) {
-				driver = new FirefoxDriver();
-			} else if (config.getProperty("browser").equals("chrome")) {
-				WebDriverManager.chromedriver().setup();
-				driver = new ChromeDriver();
-			}
+//			if (config.getProperty("browser").equals("firefox")) {
+//				driver = new FirefoxDriver();
+//			} else if (config.getProperty("browser").equals("chrome")) {
+//				WebDriverManager.chromedriver().setup();
+//				driver = new ChromeDriver();
+//			}
+			getDriver();
 
 		}
-		launchUrl();
+		//launchUrl();
 		
 	}
 
@@ -80,8 +90,7 @@ public class BaseClass {
 	
 	public void closeBrowser() {
 		if(driver != null) {
-			driver.close();
+			driver.quit();
 		}
 	}
-
 }
