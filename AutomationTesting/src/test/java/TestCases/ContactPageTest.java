@@ -16,7 +16,7 @@ public class ContactPageTest extends BaseClass{
 		contactPage = new ContactPage(driver);
 	}
 	
-	@Test(enabled = false, priority = 1)
+	@Test(enabled = true, priority = 1)
 	public void validateContactPage() {
 
 		driver.findElement(By.xpath(OR.getProperty("contact"))).click();
@@ -30,7 +30,7 @@ public class ContactPageTest extends BaseClass{
 
 	}
 	
-	@Test(enabled = true, priority = 1, invocationCount=5)
+	@Test(enabled = false, priority = 1, invocationCount=5)
 	public void validateContactPageValidSuccess() {
 
 		driver.findElement(By.xpath(OR.getProperty("contact"))).click();

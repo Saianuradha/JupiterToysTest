@@ -36,9 +36,9 @@ public String submitBtn = "//*[text()='Submit']";
 		String err_msgEmail = "//*[@id='email-err']";
 		String err_msgMessage = "//*[@id='message-err']";
 		
-		Assert.assertEquals(true, driver.findElement(By.xpath(err_msgForeName)).isDisplayed(),"err_msgForeName is Displayed");
-		Assert.assertEquals(true, driver.findElement(By.xpath(err_msgEmail)).isDisplayed(),"err_msgEmail is Displayed");
-		Assert.assertEquals(true, driver.findElement(By.xpath(err_msgMessage)).isDisplayed(),"err_msgMessage is Displayed");
+		Assert.assertEquals(true, driver.findElement(By.xpath(err_msgForeName)).isDisplayed(),"err_msgForeName is not Displayed");
+		Assert.assertEquals(true, driver.findElement(By.xpath(err_msgEmail)).isDisplayed(),"err_msgEmail is not Displayed");
+		Assert.assertEquals(true, driver.findElement(By.xpath(err_msgMessage)).isDisplayed(),"err_msgMessage is not Displayed");
 	
 		Assert.assertEquals(driver.findElement(By.xpath(err_msgHeader)).getText(), HEADER_ERR_MESSAGE);
 		Assert.assertEquals(driver.findElement(By.xpath(err_msgForeName)).getText(), FORENAME_ERR_MESSAGE);
