@@ -5,7 +5,6 @@
     <classes>
       <class name="TestCases.ContactPageTest"/>
       <class name="TestCases.VerifyCartItemsTest"/>
-      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

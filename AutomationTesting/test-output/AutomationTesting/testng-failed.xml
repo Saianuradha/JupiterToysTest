@@ -3,12 +3,22 @@
 <suite name="Failed suite [AutomationTesting]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="TestCases.LoginTest">
+      <class name="TestCases.ContactPageTest">
         <methods>
-          <include name="loginAsBankManager"/>
+          <include name="validateContactPage"/>
+          <include name="validateContactPageValidSuccess"/>
+          <include name="before"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- TestCases.LoginTest -->
+      </class> <!-- TestCases.ContactPageTest -->
+      <class name="TestCases.VerifyCartItemsTest">
+        <methods>
+          <include name="addItemsAndVerifyCartPrice"/>
+          <include name="addItemsAndVerify"/>
+          <include name="before"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- TestCases.VerifyCartItemsTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [AutomationTesting] -->
