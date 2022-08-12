@@ -17,6 +17,9 @@ public class ContactPage extends BaseClass{
 		elementActions = new ElementsActions(driver);
 	}
 public String submitBtn = "//*[text()='Submit']";
+private String foreName = "forename";
+private String email = "email";
+private String message = "message";
 
 	public void submitClick() {
 		driver.findElement(By.xpath(submitBtn)).click();
@@ -57,8 +60,14 @@ public String submitBtn = "//*[text()='Submit']";
 
 	public void enterTextFieldInfoByID(String key, String value) {
 		
-		driver.findElement(By.id(OR.getProperty(key))).sendKeys(value);
+		switch(key) {
+		case "forename": {driver.findElement(By.id(foreName)).sendKeys(value); break;}
+		
+		case "email": {driver.findElement(By.id(email)).sendKeys(value);break;}
+		
+		case "message": {driver.findElement(By.id(message)).sendKeys(value);break;}
 	
+		}
 	}
 
 	

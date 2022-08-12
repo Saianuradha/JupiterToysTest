@@ -20,17 +20,16 @@ public class VerifyCartItemsTest extends BaseClass{
 	
 	@BeforeTest
 	public void before() {
+		goToHomePage();
 		shop = new ShoppingPage(driver);
 		cart = new CartPage(driver);
 	}
 	
-	@Test(enabled = false, priority = 1)
+	@Test(enabled = true, priority = 1)
 	public void addItemsAndVerify() {
 		
-		driver.findElement(By.xpath(OR.getProperty("ShopLink"))).click();
-//		HashMap<String,Integer> testData = new HashMap<>();
-//		testData.put("Fluffy Bunny", 1);
-//		testData.put("Funny Cow", 2);
+		driver.findElement(By.xpath("//*[@id=\"nav-shop\"]/a")).click();
+
 		List<String> shoppingItems = new ArrayList<>();
 		shoppingItems.add("Funny Cow");
 		shoppingItems.add("Fluffy Bunny");
@@ -39,8 +38,8 @@ public class VerifyCartItemsTest extends BaseClass{
 		String item1 = "//h4[text()='"+shoppingItems.get(1)+"']/..//a";
 
 		shop.addItem(item0);
-		shop.addItem(item1);
 		shop.addItem(item0);
+		shop.addItem(item1);
 		cart.viewCart();
 		
 		String item0Text = driver.findElement(
@@ -59,10 +58,10 @@ public class VerifyCartItemsTest extends BaseClass{
 	
 	}
 	
-	@Test(enabled = true, priority = 1)
+	@Test(enabled = true, priority = 2)
 	public void addItemsAndVerifyCartPrice() {
 		
-		driver.findElement(By.xpath(OR.getProperty("ShopLink"))).click();
+		driver.findElement(By.xpath("//*[@id=\"nav-shop\"]/a")).click();
 		List<String> shoppingItems = new ArrayList<>();
 		shoppingItems.add("Stuffed Frog");
 		shoppingItems.add("Fluffy Bunny");

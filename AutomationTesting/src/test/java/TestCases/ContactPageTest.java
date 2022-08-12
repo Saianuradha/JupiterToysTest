@@ -1,6 +1,7 @@
 package TestCases;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -8,36 +9,38 @@ import Pages.ContactPage;
 import Testbase.BaseClass;
 
 public class ContactPageTest extends BaseClass{
+	private ContactPage contactPage;
 	
-	
-	ContactPage contactPage;
 	@BeforeTest
 	public void before() {
+		goToHomePage();
 		contactPage = new ContactPage(driver);
 	}
+	
 	
 	@Test(enabled = true, priority = 1)
 	public void validateContactPage() {
 
-		driver.findElement(By.xpath(OR.getProperty("contact"))).click();
+		driver.findElement(By.xpath("//*[@id=\"nav-contact\"]/a")).click();
 		contactPage.submitClick();
 		
 		contactPage.validateErrors();
-		contactPage.enterTextFieldInfoByID("input_forename", "Anu");
-		contactPage.enterTextFieldInfoByID("input_email", "saianuradha24@gmail.com");
-		contactPage.enterTextFieldInfoByID("input_message", "India");
+		contactPage.enterTextFieldInfoByID("forename", "Anu");
+		contactPage.enterTextFieldInfoByID("email", "saianuradha24@gmail.com");
+		contactPage.enterTextFieldInfoByID("message", "India");
 		contactPage.validateErrorsAreGone();
+		goToHomePage();
 
 	}
 	
-	@Test(enabled = false, priority = 1, invocationCount=5)
+	@Test(enabled = true, priority = 2, invocationCount = 5)
 	public void validateContactPageValidSuccess() {
 
-		driver.findElement(By.xpath(OR.getProperty("contact"))).click();
+		driver.findElement(By.xpath("//*[@id=\"nav-contact\"]/a")).click();
 		
-		contactPage.enterTextFieldInfoByID("input_forename", "Anu");
-		contactPage.enterTextFieldInfoByID("input_email", "saianuradha24@gmail.com");
-		contactPage.enterTextFieldInfoByID("input_message", "India");
+		contactPage.enterTextFieldInfoByID("forename", "Anu");
+		contactPage.enterTextFieldInfoByID("email", "saianuradha24@gmail.com");
+		contactPage.enterTextFieldInfoByID("message", "India");
 		
 		contactPage.submitClick();
 		contactPage.validsuccess();
