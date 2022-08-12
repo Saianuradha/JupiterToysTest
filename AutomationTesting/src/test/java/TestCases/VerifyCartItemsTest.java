@@ -105,6 +105,9 @@ public class VerifyCartItemsTest extends BaseClass{
 		String item2SubTotal = driver.findElement(
 				By.xpath("//table[@class='table table-striped cart-items']//tbody/tr[3]/td[4]")).getText(); 
 		
+		String total = driver.findElement(
+				By.xpath("//strong[@class=\'total ng-binding\']")).getText();
+		
 		Assert.assertEquals("$10.99", item0Price);
 		Assert.assertEquals("$9.99", item1Price);
 		Assert.assertEquals("$14.99", item2Price);
@@ -114,14 +117,22 @@ public class VerifyCartItemsTest extends BaseClass{
 		Assert.assertEquals(calcSubTotal(item2Price, item2Quantity), item2SubTotal);
 		
 		
-//		Assert.assertEquals();
-		
+		Assert.assertEquals(calcTotal(item0SubTotal, item1SubTotal, item2SubTotal), total);
 	
 	}
 	
 	public String calcSubTotal(String price, String quantity) {
 	
 		return "$"+(Double.parseDouble(price.substring(1))*Integer.parseInt(quantity));
+	}
+	
+	public String calcTotal(String subTotal1, String subTotal2, String subTotal3) {
+		
+		return "Total: "+(
+				Double.parseDouble(subTotal1.substring(1))+
+				Double.parseDouble(subTotal2.substring(1))+
+				Double.parseDouble(subTotal3.substring(1))
+				);
 	}
 
 }
