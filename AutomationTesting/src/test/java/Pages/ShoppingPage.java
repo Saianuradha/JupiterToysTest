@@ -25,5 +25,18 @@ public class ShoppingPage{
 		}
 		elementActions.click(value);
 	}
+	
+	public void addItem2(String value) {
+		try {
+			//To avoid stale element 
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		elementActions.click(value);
+	}
+	
+	
 
 }
