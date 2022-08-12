@@ -63,17 +63,18 @@ public class BaseClass {
 	@AfterSuite
 	void teardown() {
 		if (driver != null)
-			driver.quit();
+			driver.close();
 
 	}
 	
 	public void launchUrl() {
+		launchHomePage();
 		driver.manage().window().maximize();
 
 		driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")),
 				TimeUnit.SECONDS);
 	}
-	public void goToHomePage() {
+	public void launchHomePage() {
 		driver.get(config.getProperty("testsiteurl"));
 	}
 	

@@ -20,12 +20,11 @@ public class VerifyCartItemsTest extends BaseClass{
 	
 	@BeforeTest
 	public void before() {
-		goToHomePage();
 		shop = new ShoppingPage(driver);
 		cart = new CartPage(driver);
 	}
 	
-	@Test(enabled = true, priority = 1)
+	@Test(enabled = true, priority = 3)
 	public void addItemsAndVerify() {
 		
 		driver.findElement(By.xpath("//*[@id=\"nav-shop\"]/a")).click();
@@ -56,9 +55,10 @@ public class VerifyCartItemsTest extends BaseClass{
 		Assert.assertEquals(item1Text, shoppingItems.get(1),"Fluffy Bunny Text is matched");
 		
 	
+		launchHomePage();
 	}
 	
-	@Test(enabled = true, priority = 2)
+	@Test(enabled = true, priority = 4)
 	public void addItemsAndVerifyCartPrice() {
 		
 		driver.findElement(By.xpath("//*[@id=\"nav-shop\"]/a")).click();
@@ -117,7 +117,7 @@ public class VerifyCartItemsTest extends BaseClass{
 		
 		
 		Assert.assertEquals(calcTotal(item0SubTotal, item1SubTotal, item2SubTotal), total);
-	
+		launchHomePage();
 	}
 	
 	public String calcSubTotal(String price, String quantity) {

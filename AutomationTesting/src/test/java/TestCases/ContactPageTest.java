@@ -13,7 +13,6 @@ public class ContactPageTest extends BaseClass{
 	
 	@BeforeTest
 	public void before() {
-		goToHomePage();
 		contactPage = new ContactPage(driver);
 	}
 	
@@ -29,7 +28,7 @@ public class ContactPageTest extends BaseClass{
 		contactPage.enterTextFieldInfoByID("email", "saianuradha24@gmail.com");
 		contactPage.enterTextFieldInfoByID("message", "India");
 		contactPage.validateErrorsAreGone();
-		goToHomePage();
+		launchHomePage();
 
 	}
 	
@@ -45,7 +44,7 @@ public class ContactPageTest extends BaseClass{
 		contactPage.submitClick();
 		contactPage.validsuccess();
 		contactPage.clickonBack();
-
+		launchHomePage();
 	}
 	
 	
